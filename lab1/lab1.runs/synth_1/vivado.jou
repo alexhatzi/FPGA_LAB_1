@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Wed Aug 28 22:27:50 2024
+# Process ID: 275862
+# Current directory: /home/alex/FPGALAB/Lab1/lab1/lab1.runs/synth_1
+# Command line: vivado -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+# Log file: /home/alex/FPGALAB/Lab1/lab1/lab1.runs/synth_1/top.vds
+# Journal file: /home/alex/FPGALAB/Lab1/lab1/lab1.runs/synth_1/vivado.jou
+# Running On        :Samsung-SmartFridge
+# Platform          :Ubuntu
+# Operating System  :Ubuntu 22.04.4 LTS
+# Processor Detail  :AMD Ryzen 7 5825U with Radeon Graphics
+# CPU Frequency     :3611.558 MHz
+# CPU Physical cores:8
+# CPU Logical cores :16
+# Host memory       :16081 MB
+# Swap memory       :2147 MB
+# Total Virtual     :18229 MB
+# Available Virtual :6843 MB
+#-----------------------------------------------------------
+source top.tcl -notrace

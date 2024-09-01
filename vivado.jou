@@ -1,0 +1,678 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Wed Aug 28 12:11:22 2024
+# Process ID: 47072
+# Current directory: /home/alex/FPGALAB/Lab1
+# Command line: vivado
+# Log file: /home/alex/FPGALAB/Lab1/vivado.log
+# Journal file: /home/alex/FPGALAB/Lab1/vivado.jou
+# Running On        :Samsung-SmartFridge
+# Platform          :Ubuntu
+# Operating System  :Ubuntu 22.04.4 LTS
+# Processor Detail  :AMD Ryzen 7 5825U with Radeon Graphics
+# CPU Frequency     :2354.320 MHz
+# CPU Physical cores:8
+# CPU Logical cores :16
+# Host memory       :16081 MB
+# Swap memory       :2147 MB
+# Total Virtual     :18229 MB
+# Available Virtual :12585 MB
+#-----------------------------------------------------------
+start_gui
+create_project lab1 /home/alex/FPGALAB/Lab1/lab1 -part xc7a35tcpg236-1
+file mkdir /home/alex/FPGALAB/Lab1/lab1/lab1.srcs/sources_1/new
+close [ open /home/alex/FPGALAB/Lab1/lab1/lab1.srcs/sources_1/new/SegDecoder.v w ]
+add_files /home/alex/FPGALAB/Lab1/lab1/lab1.srcs/sources_1/new/SegDecoder.v
+update_compile_order -fileset sources_1
+add_files {/home/alex/FPGALAB/Lab1/lab1/lab1.srcs/sources_1/new/buttonCount.sv /home/alex/FPGALAB/Lab1/lab1/lab1.srcs/sources_1/new/top.sv /home/alex/FPGALAB/Lab1/lab1/lab1.srcs/sources_1/new/clk_divider.sv /home/alex/FPGALAB/Lab1/lab1/lab1.srcs/sources_1/new/SegDecoder.sv}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+synth_design -top top -part xc7a35tcpg236-1 -lint 
+export_ip_user_files -of_objects  [get_files /home/alex/FPGALAB/Lab1/lab1/lab1.srcs/sources_1/new/SegDecoder.v] -no_script -reset -force -quiet
+remove_files  /home/alex/FPGALAB/Lab1/lab1/lab1.srcs/sources_1/new/SegDecoder.v
+remove_files  /home/alex/FPGALAB/Lab1/lab1/lab1.srcs/sources_1/new/SegDecoder.v
+export_ip_user_files -of_objects  [get_files /home/alex/FPGALAB/Lab1/lab1/lab1.srcs/sources_1/new/buttonCount.sv] -no_script -reset -force -quiet
+remove_files  /home/alex/FPGALAB/Lab1/lab1/lab1.srcs/sources_1/new/buttonCount.sv
+export_ip_user_files -of_objects  [get_files /home/alex/FPGALAB/Lab1/lab1/lab1.srcs/sources_1/new/SegDecoder.sv] -no_script -reset -force -quiet
+remove_files  /home/alex/FPGALAB/Lab1/lab1/lab1.srcs/sources_1/new/SegDecoder.sv
+synth_design -top top -part xc7a35tcpg236-1 -lint 
+set_property FILE_TYPE SystemVerilog [get_files -all /home/alex/FPGALAB/Lab1/lab1/lab1.srcs/sources_1/new/buttoncount.sv]
+set_property source_mgmt_mode None [current_project]
+add_files -norecurse /home/alex/FPGALAB/Lab1/lab1/lab1.srcs/sources_1/new/buttoncount.sv
+add_files -norecurse /home/alex/FPGALAB/Lab1/lab1/lab1.srcs/sources_1/new/seg_decoder.sv
+synth_design -top top -part xc7a35tcpg236-1 -lint 
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+set_property source_mgmt_mode None [current_project]
+set_property source_mgmt_mode All [current_project]
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+synth_design -top top -part xc7a35tcpg236-1 -lint 
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+place_ports {anode[3]} U2
+set_property PULLTYPE NONE [get_ports [list {anode[3]}]]
+place_ports {anode[2]} U4
+place_ports {anode[1]} V4
+place_ports {anode[0]} W4
+place_ports {cathode[0]} W7
+place_ports {cathode[1]} W6
+place_ports {cathode[2]} U8
+place_ports {cathode[3]} V8
+place_ports {cathode[4]} U5
+place_ports {cathode[5]} V5
+place_ports {cathode[6]} U7
+place_ports {cathode[7]} V7
+place_ports clk W5
+place_ports but1 W19
+set_property package_pin "" [get_ports [list  but2]]
+place_ports but2 T17
+file mkdir /home/alex/FPGALAB/Lab1/lab1/lab1.srcs/constrs_1/new
+close [ open /home/alex/FPGALAB/Lab1/lab1/lab1.srcs/constrs_1/new/const.xdc w ]
+add_files -fileset constrs_1 /home/alex/FPGALAB/Lab1/lab1/lab1.srcs/constrs_1/new/const.xdc
+set_property target_constrs_file /home/alex/FPGALAB/Lab1/lab1/lab1.srcs/constrs_1/new/const.xdc [current_fileset -constrset]
+save_constraints -force
+reset_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+close_design
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+open_run impl_1
+synth_design -top top -part xc7a35tcpg236-1 -lint 
+set_property IOSTANDARD LVCMOS33 [get_ports [list {cathode[3]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {cathode[4]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {cathode[2]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {cathode[1]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {cathode[0]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list but1]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list but2]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list clk]]
+save_constraints
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property IOSTANDARD LVCMOS33 [get_ports [list {cathode[5]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {cathode[7]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {cathode[6]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {anode[0]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {anode[1]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {anode[2]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {anode[3]}]]
+save_constraints -force
+reset_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {/home/alex/FPGALAB/Lab1/lab1/lab1.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/alex/FPGALAB/Lab1/lab1/lab1.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/alex/FPGALAB/Lab1/lab1/lab1.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run impl_1
+reset_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+place_ports debug_led V3
+set_property IOSTANDARD LVCMOS33 [get_ports [list debug_led]]
+save_constraints
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/alex/FPGALAB/Lab1/lab1/lab1.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+file mkdir /home/alex/FPGALAB/Lab1/lab1/lab1.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open /home/alex/FPGALAB/Lab1/lab1/lab1.srcs/sim_1/new/tb_segment.sv w ]
+add_files -fileset sim_1 /home/alex/FPGALAB/Lab1/lab1/lab1.srcs/sim_1/new/tb_segment.sv
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+launch_simulation
+source tb_segment.tcl
+close_sim
+launch_simulation
+source tb_segment.tcl
+update_compile_order -fileset sim_1
+add_bp {/home/alex/FPGALAB/Lab1/lab1/lab1.srcs/sim_1/new/tb_segment.sv} 14
+remove_bps -file {/home/alex/FPGALAB/Lab1/lab1/lab1.srcs/sim_1/new/tb_segment.sv} -line 14
+update_compile_order -fileset sim_1
+close_sim
+launch_simulation
+source tb_segment.tcl
+close_sim
+launch_simulation
+launch_simulation
+source tb_segment.tcl
+close_sim
+launch_simulation
+source tb_segment.tcl
+current_wave_config {Untitled 5}
+add_wave {{/tb_segment/UUT/u_button_clock/sample_clk}} 
+current_wave_config {Untitled 5}
+add_wave {{/tb_segment/UUT/u_button_clock/clkcount}} 
+save_wave_config {/home/alex/FPGALAB/Lab1/lab1/tb_segment_behav.wcfg}
+add_files -fileset sim_1 -norecurse /home/alex/FPGALAB/Lab1/lab1/tb_segment_behav.wcfg
+set_property xsim.view /home/alex/FPGALAB/Lab1/lab1/tb_segment_behav.wcfg [get_filesets sim_1]
+close_sim
+launch_simulation
+open_wave_config /home/alex/FPGALAB/Lab1/lab1/tb_segment_behav.wcfg
+source tb_segment.tcl
+save_wave_config {/home/alex/FPGALAB/Lab1/lab1/tb_segment_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/alex/FPGALAB/Lab1/lab1/tb_segment_behav.wcfg
+source tb_segment.tcl
+close_sim
+launch_simulation
+open_wave_config /home/alex/FPGALAB/Lab1/lab1/tb_segment_behav.wcfg
+source tb_segment.tcl
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/alex/FPGALAB/Lab1/lab1/lab1.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/alex/FPGALAB/Lab1/lab1/lab1.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+close_sim
+launch_simulation
+open_wave_config /home/alex/FPGALAB/Lab1/lab1/tb_segment_behav.wcfg
+source tb_segment.tcl
+close_sim
+launch_simulation
+open_wave_config /home/alex/FPGALAB/Lab1/lab1/tb_segment_behav.wcfg
+source tb_segment.tcl
+close_sim
+launch_simulation
+open_wave_config /home/alex/FPGALAB/Lab1/lab1/tb_segment_behav.wcfg
+source tb_segment.tcl
+save_wave_config {/home/alex/FPGALAB/Lab1/lab1/tb_segment_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/alex/FPGALAB/Lab1/lab1/tb_segment_behav.wcfg
+source tb_segment.tcl
+close_sim
+launch_simulation
+open_wave_config /home/alex/FPGALAB/Lab1/lab1/tb_segment_behav.wcfg
+source tb_segment.tcl
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/alex/FPGALAB/Lab1/lab1/lab1.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/alex/FPGALAB/Lab1/lab1/lab1.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/alex/FPGALAB/Lab1/lab1/lab1.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+close_sim
+launch_simulation
+open_wave_config /home/alex/FPGALAB/Lab1/lab1/tb_segment_behav.wcfg
+source tb_segment.tcl
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/alex/FPGALAB/Lab1/lab1/lab1.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+close_sim
+launch_simulation
+open_wave_config /home/alex/FPGALAB/Lab1/lab1/tb_segment_behav.wcfg
+source tb_segment.tcl
+close_sim
+launch_simulation
+open_wave_config /home/alex/FPGALAB/Lab1/lab1/tb_segment_behav.wcfg
+source tb_segment.tcl
+close_sim
+launch_simulation
+open_wave_config /home/alex/FPGALAB/Lab1/lab1/tb_segment_behav.wcfg
+source tb_segment.tcl
+set_property -name {xsim.simulate.runtime} -value {1s} -objects [get_filesets sim_1]
+close_sim
+launch_simulation
+open_wave_config /home/alex/FPGALAB/Lab1/lab1/tb_segment_behav.wcfg
+source tb_segment.tcl
+set_property -name {xsim.simulate.runtime} -value {250ms} -objects [get_filesets sim_1]
+close_sim
+launch_simulation
+open_wave_config /home/alex/FPGALAB/Lab1/lab1/tb_segment_behav.wcfg
+source tb_segment.tcl
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/alex/FPGALAB/Lab1/lab1/lab1.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+current_design synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+close_design
+open_run synth_1 -name synth_1
+set_property IOSTANDARD LVCMOS33 [get_ports [list debugBUT_LED]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list debugDISP_LED]]
+place_ports debugBUT_LED V3
+place_ports debugDISP_LED V14
+save_constraints
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {/home/alex/FPGALAB/Lab1/lab1/lab1.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/alex/FPGALAB/Lab1/lab1/lab1.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+close_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+disconnect_hw_server localhost:3121
+connect_hw_server -allow_non_jtag
+open_hw_target
+refresh_hw_target {localhost:3121/xilinx_tcf/Digilent/210183B9A5E6A}
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/alex/FPGALAB/Lab1/lab1/lab1.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/alex/FPGALAB/Lab1/lab1/lab1.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/alex/FPGALAB/Lab1/lab1/lab1.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+close_sim
+launch_simulation
+open_wave_config /home/alex/FPGALAB/Lab1/lab1/tb_segment_behav.wcfg
+source tb_segment.tcl
+set_property -name {xsim.simulate.runtime} -value {50ms} -objects [get_filesets sim_1]
+close_sim
+launch_simulation
+open_wave_config /home/alex/FPGALAB/Lab1/lab1/tb_segment_behav.wcfg
+source tb_segment.tcl
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+close_sim
+launch_simulation
+open_wave_config /home/alex/FPGALAB/Lab1/lab1/tb_segment_behav.wcfg
+source tb_segment.tcl
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/alex/FPGALAB/Lab1/lab1/lab1.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/alex/FPGALAB/Lab1/lab1/lab1.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/alex/FPGALAB/Lab1/lab1/lab1.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+open_run synth_1 -name synth_1
+close_sim
+launch_simulation
+open_wave_config /home/alex/FPGALAB/Lab1/lab1/tb_segment_behav.wcfg
+source tb_segment.tcl
+save_wave_config {/home/alex/FPGALAB/Lab1/lab1/tb_segment_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/alex/FPGALAB/Lab1/lab1/tb_segment_behav.wcfg
+source tb_segment.tcl
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/alex/FPGALAB/Lab1/lab1/lab1.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+close_sim
+launch_simulation
+open_wave_config /home/alex/FPGALAB/Lab1/lab1/tb_segment_behav.wcfg
+source tb_segment.tcl
+set_property -name {xsim.simulate.runtime} -value {4s} -objects [get_filesets sim_1]
+close_sim
+launch_simulation
+open_wave_config /home/alex/FPGALAB/Lab1/lab1/tb_segment_behav.wcfg
+source tb_segment.tcl
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/alex/FPGALAB/Lab1/lab1/lab1.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/alex/FPGALAB/Lab1/lab1/lab1.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+startgroup
+set_property package_pin "" [get_ports [list  {cathode[7]}]]
+place_ports {cathode[0]} V7
+endgroup
+startgroup
+set_property package_pin "" [get_ports [list  {cathode[6]}]]
+place_ports {cathode[1]} U7
+endgroup
+set_property package_pin "" [get_ports [list  {cathode[3]}]]
+startgroup
+set_property package_pin "" [get_ports [list  {cathode[5]}]]
+place_ports {cathode[2]} V5
+endgroup
+startgroup
+set_property package_pin "" [get_ports [list  {cathode[4]}]]
+place_ports {cathode[3]} U5
+endgroup
+place_ports {cathode[4]} V8
+place_ports {cathode[5]} U8
+place_ports {cathode[6]} W6
+place_ports {cathode[7]} W7
+save_constraints -force
+reset_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/alex/FPGALAB/Lab1/lab1/lab1.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/alex/FPGALAB/Lab1/lab1/lab1.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/alex/FPGALAB/Lab1/lab1/lab1.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/alex/FPGALAB/Lab1/lab1/lab1.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/alex/FPGALAB/Lab1/lab1/lab1.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+current_design impl_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+set_property package_pin "" [get_ports [list  {anode[3]}]]
+set_property package_pin "" [get_ports [list  {anode[2]}]]
+save_constraints -force
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+place_ports {anode[3]} U4
+set_property package_pin "" [get_ports [list  {anode[2]}]]
+set_property package_pin "" [get_ports [list  {anode[3]}]]
+place_ports {anode[1]} U4
+place_ports {anode[0]} U2
+save_constraints -force
+reset_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+startgroup
+reset_property DIFF_TERM [get_ports {anode[3]}]
+reset_property DRIVE [get_ports {anode[3]}]
+reset_property IN_TERM [get_ports {anode[3]}]
+reset_property IOSTANDARD [get_ports {anode[3]}]
+reset_property OFFCHIP_TERM [get_ports {anode[3]}]
+reset_property PULLTYPE [get_ports {anode[3]}]
+reset_property SLEW [get_ports {anode[3]}]
+endgroup
+set_property IOSTANDARD LVCMOS33 [get_ports [list {anode[3]}]]
+refresh_design
+current_design synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+close_design
+open_run synth_1 -name synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property IOSTANDARD LVCMOS33 [get_ports [list debugBUT_LED]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list debugBUT_LED]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list debugDISP_LED]]
+save_constraints
+reset_run impl_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property is_loc_fixed true [get_ports [list  debugBUT_LED]]
+place_ports debugBUT_LED V3
+place_ports debugDISP_LED V14
+save_constraints
+reset_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/alex/FPGALAB/Lab1/lab1/lab1.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/alex/FPGALAB/Lab1/lab1/lab1.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+refresh_design
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/alex/FPGALAB/Lab1/lab1/lab1.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/alex/FPGALAB/Lab1/lab1/lab1.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/alex/FPGALAB/Lab1/lab1/lab1.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+close_design
+open_run synth_1 -name synth_1
+place_ports {anode[3]} W4
+place_ports {anode[2]} V4
+startgroup
+set_property package_pin "" [get_ports [list  {cathode[7]}]]
+place_ports {cathode[0]} V7
+endgroup
+set_property package_pin "" [get_ports [list  {cathode[1]}]]
+set_property package_pin "" [get_ports [list  {cathode[2]}]]
+set_property package_pin "" [get_ports [list  {cathode[3]}]]
+set_property package_pin "" [get_ports [list  {cathode[4]}]]
+set_property package_pin "" [get_ports [list  {cathode[5]}]]
+set_property package_pin "" [get_ports [list  {cathode[6]}]]
+place_ports {cathode[1]} U7
+place_ports {cathode[2]} V5
+place_ports {cathode[3]} U5
+place_ports {cathode[4]} V8
+place_ports {cathode[5]} U8
+place_ports {cathode[6]} W6
+place_ports {cathode[7]} W7
+save_constraints
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/alex/FPGALAB/Lab1/lab1/lab1.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {/home/alex/FPGALAB/Lab1/lab1/lab1.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+close_sim

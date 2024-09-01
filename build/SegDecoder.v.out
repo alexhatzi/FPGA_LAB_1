@@ -1,0 +1,19 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x5f6e3e095dc0 .scope module, "SegDecoder" "SegDecoder" 2 23;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "But1";
+o0x77d553cae018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x5f6e3e097350_0 .net "But1", 0 0, o0x77d553cae018;  0 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "lab1/lab1.srcs/sources_1/new/SegDecoder.v";

@@ -1,0 +1,13 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  \
+"../../../../lab1.srcs/sources_1/new/buttoncount.sv" \
+"../../../../lab1.srcs/sources_1/new/clk_divider.sv" \
+"../../../../lab1.srcs/sources_1/new/seg_decoder.sv" \
+"../../../../lab1.srcs/sources_1/new/top.sv" \
+"../../../../lab1.srcs/sim_1/new/tb_segment.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
